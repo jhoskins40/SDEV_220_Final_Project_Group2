@@ -1,0 +1,103 @@
+/* CSS for overriding Bootstrap defaults */
+
+.register-btn {
+    background: #4E9CAF;
+    color: white;
+}
+
+
+.btn-container {
+    margin-top: 15px;
+    outline: rgb(212, 212, 212) solid 2px;
+    padding: 25px 50px 25px 50px;
+    border-radius: 3px;
+    /* margin-bottom: 125px; */
+}
+.signup-info, .login-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.login-btn, .register-btn {
+    display: block;
+    width: 250px;
+    margin: 10px auto; 
+  }
+
+.register-btn:hover, .register-btn:active:focus {
+    background: #5db6cc;
+    color: white;
+}
+
+.login-btn {
+    background: #37b67b;
+    color: white;
+}
+
+.login-btn:hover, .login-btn:active:focus {
+    background: #3ecc8a;
+    color: white;
+}
+
+
+.login-page-btn {
+    background: #5a5a5a;
+    color: white;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.login-page-btn:hover, .login-page-btn:active:focus {
+    background: #757575;
+    color: white;
+}
+
+
+.submit-ticket-btn {
+    background: #5a5a5a;
+    color: white;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.submit-ticket-btn:hover, .submit-ticket-btn:active:focus, .edit-status-btn:hover, .edit-status-btn:active:focus {
+    background: #757575;
+    color: white;
+}
+
+.delete-btn {
+    color: white;
+    background-color: rgb(175, 56, 56);
+  }
+
+.delete-btn:hover {
+    background-color: rgb(221, 57, 57);
+    color: white;
+}
+
+.delete-btn:active {
+    background-color: rgb(221, 57, 57) !important;
+    color: white !important;
+}
+
+
+
+.btn-info {
+    border: none;
+}
+
+.update-status-btn {
+    width: 150px;
+    background-color: rgb(103, 103, 214);
+}
+
+.update-status-btn:hover {
+    background-color: rgb(131, 131, 231);
+}
+
+.update-status-btn:active:focus {
+    background-color: rgb(131, 131, 231);
+}

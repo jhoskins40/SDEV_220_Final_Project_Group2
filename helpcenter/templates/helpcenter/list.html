@@ -1,0 +1,72 @@
+{% extends 'helpcenter/base_layout.html' %} {% block content %}
+<h1 class="text-center support-portal">All User Tickets</h1>
+
+{% for msg in messages %}
+<div class="alert-container">
+  <div
+    class="alert alert-success alert-dismissible fade show text-center"
+    role="alert"
+  >
+    <strong>{{ msg }}</strong>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+</div>
+{% endfor %}
+
+<div class="center-container">
+  <div class="ticket-container">
+    <table>
+      <tr>
+        {% for post in user_tickets %}
+        <td class="{% cycle 'odd-staff' 'even-staff' %}">
+          <article>
+            <div class="ticket-title-staff">
+              <small>Title:</small>
+              <h2>{{ post.title }}</h2>
+            </div>
+            <p class="author">By: {{ post.author }}</p>
+            <!-- <p>Created: {{ post.created_at }}</p>
+            <p>Last Updated: {{ post.updated_at }}</p> -->
+            <hr class="hr-staff" />
+            <div>
+              <p class="subject-item-staff">Subject:</p>
+              <p class="ticket-subject-staff">
+                {{ post.subject|linebreaksbr }}
+              </p>
+            </div>
+            <div class="update-info-staff">
+              <small>Created: {{ post.created_at }}</small>
+              <small>Last Updated: {{ post.updated_at }}</small>
+            </div>
+            <div class="ticket-btn-container">
+              <!-- <label for="status" class="status-lbl">Status:</label> -->
+              <a
+                href="{% url 'edit_ticket_status' ticket_id=post.id %}"
+                class="ticket-btn btn btn-info edit-status-btn edit-status-btn update-status-btn"
+                >Change Status</a
+              >
+              <a
+                class="{% if post.status == 0 %}status-pending{% elif post.status == 1 %}status-active{% else %}status-closed{% endif %} status-font"
+                >Status: {{ post.get_status_display }}</a
+              >
+              <a
+                href="{% url 'delete-ticket' ticket_id=post.id %}"
+                class="ticket-btn btn btn-info delete-btn"
+                >Delete</a
+              >
+            </div>
+          </article>
+        </td>
+        {% endfor %}
+      </tr>
+    </table>
+  </div>
+</div>
+{% if not user_tickets %}
+<p class="text-center no-tickets">No tickets available.</p>
+{% endif %} {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'helpcenter/base_layout.html' %} {% block content %}
+<h1 class="text-center support-portal ticket-form">Update Ticket Status</h1>
+<div class="center-container">
+  <div class="ticket-form-container">
+    <form method="post">
+      <div class="edit-form">{% csrf_token %} {{ form.as_p }}</div>
+      <button type="submit" class="btn btn-info submit-ticket-btn">
+        Update Status
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}
